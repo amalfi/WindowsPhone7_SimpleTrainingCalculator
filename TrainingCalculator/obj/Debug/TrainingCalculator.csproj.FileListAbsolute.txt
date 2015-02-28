@@ -1,0 +1,15 @@
+c:\users\marcin\documents\visual studio 2010\Projects\TrainingCalculator\TrainingCalculator\Bin\Debug\ApplicationIcon.png
+c:\users\marcin\documents\visual studio 2010\Projects\TrainingCalculator\TrainingCalculator\Bin\Debug\Background.png
+c:\users\marcin\documents\visual studio 2010\Projects\TrainingCalculator\TrainingCalculator\Bin\Debug\TrainingCalculator.dll
+c:\users\marcin\documents\visual studio 2010\Projects\TrainingCalculator\TrainingCalculator\Bin\Debug\TrainingCalculator.pdb
+c:\users\marcin\documents\visual studio 2010\Projects\TrainingCalculator\TrainingCalculator\Bin\Debug\AppManifest.xaml
+c:\users\marcin\documents\visual studio 2010\Projects\TrainingCalculator\TrainingCalculator\Bin\Debug\TrainingCalculator.xap
+c:\users\marcin\documents\visual studio 2010\Projects\TrainingCalculator\TrainingCalculator\obj\Debug\App.g.i.cs
+c:\users\marcin\documents\visual studio 2010\Projects\TrainingCalculator\TrainingCalculator\obj\Debug\MainPage.g.i.cs
+c:\users\marcin\documents\visual studio 2010\Projects\TrainingCalculator\TrainingCalculator\obj\Debug\SecondPage.g.i.cs
+c:\users\marcin\documents\visual studio 2010\Projects\TrainingCalculator\TrainingCalculator\obj\Debug\TrainingCalculator.g.resources
+c:\users\marcin\documents\visual studio 2010\Projects\TrainingCalculator\TrainingCalculator\obj\Debug\TrainingCalculator.dll
+c:\users\marcin\documents\visual studio 2010\Projects\TrainingCalculator\TrainingCalculator\obj\Debug\TrainingCalculator.pdb
+c:\users\marcin\documents\visual studio 2010\Projects\TrainingCalculator\TrainingCalculator\obj\Debug\XapCacheFile.xml
+c:\users\marcin\documents\visual studio 2010\Projects\TrainingCalculator\TrainingCalculator\obj\Debug\SummaryPage.g.i.cs
+c:\users\marcin\documents\visual studio 2010\Projects\TrainingCalculator\TrainingCalculator\obj\Debug\SendEmailPage.g.i.cs
