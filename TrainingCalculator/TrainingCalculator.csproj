@@ -74,8 +74,9 @@
     <Compile Include="SummaryPage.xaml.cs">
       <DependentUpon>SummaryPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Tools\SetDAO.cs" />
     <Compile Include="Tools\Set.cs" />
-    <Compile Include="Tools\TrainingWeightsGenerator.cs" />
+    <Compile Include="Tools\TrainingWeightsGeneratorService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">

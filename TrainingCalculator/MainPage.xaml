@@ -28,15 +28,15 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <CheckBox Content="5x5" HorizontalAlignment="Left" Margin="175,247,0,334" Name="checkBox1" Width="190" IsEnabled="True" IsThreeState="False" />
+            <CheckBox Content="5x5" HorizontalAlignment="Left" Margin="175,247,0,334" Name="checkBox1" Width="190" IsEnabled="True" IsThreeState="False" Checked="checkBox1_Checked" />
             <TextBlock Height="48" HorizontalAlignment="Left" Margin="12,215,0,0" Name="textBlock1" Text="Choose your repetition schema" VerticalAlignment="Top" Width="438" FontWeight="Bold" FontSize="30" />
-            <CheckBox Content="3x3" Height="75" HorizontalAlignment="Left" Margin="175,373,0,0" Name="checkBox2" VerticalAlignment="Top" Width="190" />
-            <CheckBox Content="6x6" Height="75" HorizontalAlignment="Left" Margin="175,310,0,0" Name="checkBox3" VerticalAlignment="Top" Width="190" />
-            <Button Content="Next Step" Height="94" HorizontalAlignment="Left" Margin="105,454,0,0" Name="button1" VerticalAlignment="Top" Width="260" Click="button1_Click" />
+            <CheckBox Content="3x3" Height="75" HorizontalAlignment="Left" Margin="175,373,0,0" Name="checkBox2" VerticalAlignment="Top" Width="190" Checked="checkBox2_Checked" />
+            <CheckBox Content="6x6" Height="75" HorizontalAlignment="Left" Margin="175,310,0,0" Name="checkBox3" VerticalAlignment="Top" Width="190" Checked="checkBox3_Checked" />
+            <Button Content="Next Step" Height="94" HorizontalAlignment="Left" Margin="105,454,0,0" Name="button1" VerticalAlignment="Top" Width="260" Click="nextStepButtonHandler" />
             <TextBlock FontSize="30" FontWeight="Bold" Height="48" HorizontalAlignment="Left" Margin="102,16,0,0" Name="textBlock2" Text="Choose excersise" VerticalAlignment="Top" Width="438" />
-            <CheckBox Content="Bench Press" HorizontalAlignment="Left" IsEnabled="True" IsThreeState="False" Margin="172,48,0,533" Name="checkBox4" Width="190" Checked="checkBox4_Checked" IsChecked="{x:Null}" />
-            <CheckBox Content="Squat" HorizontalAlignment="Left" IsEnabled="True" IsThreeState="False" Margin="172,96,0,485" Name="checkBox5" Width="190" />
-            <CheckBox Content="Deadlift" HorizontalAlignment="Left" IsEnabled="True" IsThreeState="False" Margin="172,152,0,429" Name="checkBox6" Width="190" />
+            <CheckBox Content="Bench Press" HorizontalAlignment="Left" IsEnabled="True" IsThreeState="False" Margin="172,48,0,533" Name="benchPressCheckBox" Width="190" IsChecked="{x:Null}" Checked="benchPress_checked" />
+            <CheckBox Content="Squat" HorizontalAlignment="Left" IsEnabled="True" IsThreeState="False" Margin="172,96,0,485" Name="squatCheckBox" Width="190" Checked="squat_checked" />
+            <CheckBox Content="Deadlift" HorizontalAlignment="Left" IsEnabled="True" IsThreeState="False" Margin="172,152,0,429" Name="deadliftCheckBox" Width="190" Checked="deadlift_checked" />
             <Button Content="Previous Step" Height="94" HorizontalAlignment="Left" Margin="102,556,0,0" Name="button3" VerticalAlignment="Top" Width="260" Click="button3_Click" />
         </Grid>
         <TextBox Grid.Row="1" Height="72" HorizontalAlignment="Left" Margin="506,48,0,0" Name="textBox1" Text="TextBox" VerticalAlignment="Top" Width="460" />
