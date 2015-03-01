@@ -9,32 +9,35 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace TrainingCalculator.Tools
 {
     public class SetDAO
     {
-        private Dictionary<string, Set> sets = new Dictionary<string, Set>();
-        private Dictionary<string, string> excersiseNameAndRepetitionSchema = new Dictionary<string, string>();
+        private Dictionary<int, Set> sets = new Dictionary<int, Set>();
+        private Dictionary<string, string> settedExcersiseNameAndRepetitionSchema = new Dictionary<string, string>();
 
         public Dictionary<string, Set> getexcersiseNameAndRepetitionSchema(Dictionary<string, Set> excersiseNameAndRepetitionSchema)
         {
             return excersiseNameAndRepetitionSchema;
         }
 
-        public void setExcersiseNameAndRepetitionSchema(Dictionary<string, string> excersiseNameAndRepetitionSchema)
+        public void setExcersiseNameAndRepetitionSchema(Dictionary<string, bool?> checkboxesDictionary)
         {
-            //function body
+            TrainingWeightsGeneratorService trainingWeightGeneratorService = new TrainingWeightsGeneratorService();
+            settedExcersiseNameAndRepetitionSchema = trainingWeightGeneratorService.setTypeOfExcersiseAndRepSchema(checkboxesDictionary);
         }
 
-        public Dictionary<string, Set> getAllSets(Dictionary<string,Set> introData)
+        public Dictionary<int, Set> getAllSets(Dictionary<int,Set> introData)
         {
             return sets;
         }
 
-        public void setAllSets()
+        public void setAllSets(double maximumWeightForGivenExcersise)
         {
-              //function body
+            TrainingWeightsGeneratorService twss = new TrainingWeightsGeneratorService();
+            sets = twss.setMapOfSetsWithWeightForGivenExcersiseAndRepSchema(settedExcersiseNameAndRepetitionSchema, maximumWeightForGivenExcersise);
         }
     }
 }

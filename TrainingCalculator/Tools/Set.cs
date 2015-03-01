@@ -9,6 +9,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace TrainingCalculator.Tools
 {
@@ -17,5 +18,13 @@ namespace TrainingCalculator.Tools
         double weight { get; set; }
         int reps { get; set; }
         int setNumber { get; set; }
+
+        public Set(double weight, int reps, int setNumber)
+        {
+            this.weight = weight;
+            this.reps = reps;
+            this.setNumber = setNumber;
+        }
+
     }
 }

@@ -10,6 +10,8 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
+using TrainingCalculator.Tools;
+using System.Diagnostics;
 
 namespace TrainingCalculator
 {
@@ -71,20 +73,21 @@ namespace TrainingCalculator
             checkboxesDictionary.Add("sixSixChecked", sixSixChecked);
             checkboxesDictionary.Add("threeThreeChecked", threeThreeChecked);
 
-            trainingWeightsGeneratorService.setTypeOfExcersiseAndRepSchema(checkboxesDictionary);
+            foreach (var item in checkboxesDictionary)
+            {
+                Debug.WriteLine(item.Key);
+                Debug.WriteLine(item.Value);
+            }
 
+            SetDAO setDAO = new SetDAO();
+            setDAO.setExcersiseNameAndRepetitionSchema(checkboxesDictionary);
 
             NavigationService.Navigate(new Uri("/SecondPage.xaml", UriKind.Relative));
         }
-
-        
-       /*
-        private void button1_Click(object sender, RoutedEventArgs e)
+        private void button3_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/SecondPage.xaml", UriKind.Relative));
-            //generating list of trainings sets based on :
+
         }
-        */
 
        
     }

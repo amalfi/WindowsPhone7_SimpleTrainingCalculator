@@ -10,6 +10,8 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
+using TrainingCalculator.Tools;
+using System.Diagnostics;
 
 namespace TrainingCalculator
 {
@@ -25,8 +27,14 @@ namespace TrainingCalculator
             
         }
 
-        private void button1_Click(object sender, RoutedEventArgs e)
+        private void button1_Click(object sender, RoutedEventArgs e) //next page handler
         {
+            SetDAO setDAO = new SetDAO();
+            string typedMaximumWeightString = maximumWeight.Text;
+            double typedMaximumWeightDouble;
+            Double.TryParse(typedMaximumWeightString, out typedMaximumWeightDouble);
+            setDAO.setAllSets(typedMaximumWeightDouble);
+
             NavigationService.Navigate(new Uri("/SummaryPage.xaml", UriKind.Relative));
         }
 
