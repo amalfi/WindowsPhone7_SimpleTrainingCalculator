@@ -12,6 +12,7 @@ using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using TrainingCalculator.Tools;
 using System.Diagnostics;
+using Microsoft.Phone.Shell;
 
 namespace TrainingCalculator
 {
@@ -33,7 +34,17 @@ namespace TrainingCalculator
             string typedMaximumWeightString = maximumWeight.Text;
             double typedMaximumWeightDouble;
             Double.TryParse(typedMaximumWeightString, out typedMaximumWeightDouble);
+
+            string excersiseName = PhoneApplicationService.Current.State["excersiseName"].ToString();
+            string repSchema = PhoneApplicationService.Current.State["repSchema"].ToString();
+            Dictionary<string, string> excersiseAndRepetitionSchema = new Dictionary<string, string>();
+            excersiseAndRepetitionSchema.Add("excersiseName", excersiseName);
+            excersiseAndRepetitionSchema.Add("repSchema", repSchema);
+
+            setDAO.settedExcersiseNameAndRepetitionSchema = excersiseAndRepetitionSchema;
             setDAO.setAllSets(typedMaximumWeightDouble);
+
+            PhoneApplicationService.Current.State["allSets"] = setDAO.sets;
 
             NavigationService.Navigate(new Uri("/SummaryPage.xaml", UriKind.Relative));
         }

@@ -15,8 +15,8 @@ namespace TrainingCalculator.Tools
 {
     public class SetDAO
     {
-        private Dictionary<int, Set> sets = new Dictionary<int, Set>();
-        private Dictionary<string, string> settedExcersiseNameAndRepetitionSchema = new Dictionary<string, string>();
+        public Dictionary<int, Set> sets = new Dictionary<int, Set>();
+        public Dictionary<string, string> settedExcersiseNameAndRepetitionSchema = new Dictionary<string, string>();
 
         public Dictionary<string, Set> getexcersiseNameAndRepetitionSchema(Dictionary<string, Set> excersiseNameAndRepetitionSchema)
         {
@@ -37,6 +37,11 @@ namespace TrainingCalculator.Tools
         public void setAllSets(double maximumWeightForGivenExcersise)
         {
             TrainingWeightsGeneratorService twss = new TrainingWeightsGeneratorService();
+            foreach (var item in settedExcersiseNameAndRepetitionSchema)
+            {
+                Debug.WriteLine(item.Key);
+                Debug.WriteLine(item.Value);
+            }
             sets = twss.setMapOfSetsWithWeightForGivenExcersiseAndRepSchema(settedExcersiseNameAndRepetitionSchema, maximumWeightForGivenExcersise);
         }
     }

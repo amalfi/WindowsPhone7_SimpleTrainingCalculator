@@ -20,6 +20,12 @@ namespace TrainingCalculator
         public Dictionary<string, string> setTypeOfExcersiseAndRepSchema(Dictionary<string, bool?> mapOfCheckboxValues)
         {
             Dictionary<string,string> checkedBoxesValues = new Dictionary<string,string>();
+            foreach (var item in checkedBoxesValues)
+            {
+                Debug.WriteLine(item.Key);
+                Debug.WriteLine(item.Value);
+            }
+
             SetDAO setDao = new SetDAO();
             foreach (var item in mapOfCheckboxValues)
             {
@@ -62,6 +68,13 @@ namespace TrainingCalculator
         public Dictionary<int, Set> setMapOfSetsWithWeightForGivenExcersiseAndRepSchema(Dictionary<string, string> checkboxesDictionary, double maximumWeightForChoosedExcersise)
         {
             Dictionary<int, Set> generatedSet = new Dictionary<int, Set>();
+            //checkboxes dictionary jest puste
+            Debug.WriteLine("Size of checkboxesDictionary :" + checkboxesDictionary.Count);
+            foreach (var item in checkboxesDictionary)
+            {
+                Debug.WriteLine(item.Key);
+                Debug.WriteLine(item.Value);
+            }
 
             String excersiseName = checkboxesDictionary["excersiseName"];
             String repSchema = checkboxesDictionary["repSchema"];
@@ -78,6 +91,11 @@ namespace TrainingCalculator
                 generatedSet = generateListOfSetsFor33(maximumWeightForChoosedExcersise);
             }
 
+            foreach (var item in generatedSet)
+            {
+                Debug.WriteLine(item.Key);
+                Debug.WriteLine(item.Value);
+            }
             return generatedSet;
         }
 

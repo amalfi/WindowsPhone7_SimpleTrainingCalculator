@@ -12,6 +12,8 @@ using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using TrainingCalculator.Tools;
 using System.Diagnostics;
+using TrainingCalculator;
+using Microsoft.Phone.Shell;
 
 namespace TrainingCalculator
 {
@@ -80,9 +82,19 @@ namespace TrainingCalculator
             }
 
             SetDAO setDAO = new SetDAO();
-            setDAO.setExcersiseNameAndRepetitionSchema(checkboxesDictionary);
+            setDAO.setExcersiseNameAndRepetitionSchema(checkboxesDictionary); //It can be used for saving to database in the future
+
+            //
+            Dictionary<string, string> settedSchema = setDAO.settedExcersiseNameAndRepetitionSchema;
+            String excersiseName = settedSchema["excersiseName"];
+            String repSchema = settedSchema["repSchema"];
+            //
+            //NavigationService.Navigate(new Uri("/SecondPage.xaml?excersiseName="+excersiseName+"&repSchema="+repSchema, UriKind.Relative));
+            PhoneApplicationService.Current.State["excersiseName"] = excersiseName;
+            PhoneApplicationService.Current.State["repSchema"] = repSchema;
 
             NavigationService.Navigate(new Uri("/SecondPage.xaml", UriKind.Relative));
+        
         }
         private void button3_Click(object sender, RoutedEventArgs e)
         {

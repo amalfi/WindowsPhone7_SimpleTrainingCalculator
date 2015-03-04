@@ -11,6 +11,11 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Tasks;
+using Microsoft.Phone.Shell;
+using System.Collections;
+using System.Collections.Generic;
+using TrainingCalculator.Tools;
+using System.Diagnostics;
 
 namespace TrainingCalculator
 {
@@ -34,6 +39,35 @@ namespace TrainingCalculator
         {
             NavigationService.Navigate(new Uri("/SecondPage.xaml", UriKind.Relative));
         }
+
+        private void PhoneApplicationPage_Loaded(object sender, RoutedEventArgs e) //onReady event on SummaryPage.xaml
+        {
+            //get Data from proper parameter
+            var allSetsVariable = PhoneApplicationService.Current.State["allSets"];
+            Debug.WriteLine("Object loaden in PhoneApplicationService under allSets key" + allSetsVariable);
+
+            Dictionary<int,Set> allSets = (Dictionary<int,Set>) PhoneApplicationService.Current.State["allSets"];
+            string valueOfsetsWithDescriptionTextArea = setTextInSetsDescriptionArea(allSets);
+
+            setsWithDescriptionTextArea.Text = valueOfsetsWithDescriptionTextArea;
+
+        }
+
+        private string setTextInSetsDescriptionArea(Dictionary<int, Set> allSets)
+        {
+            string textToSetInComponent = "";
+
+            foreach (var item in allSets)
+            {
+                int numberOfSet = item.Key;
+                Set currentSet = item.Value;
+                string currentLine = "Set " + numberOfSet + " : " + currentSet.weight + " x " + currentSet.reps + " reps \n";
+                textToSetInComponent = textToSetInComponent + currentLine;
+            }
+
+            return textToSetInComponent;
+        }
+      
 
     }
 }

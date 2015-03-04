@@ -15,9 +15,9 @@ namespace TrainingCalculator.Tools
 {
     public class Set
     {
-        double weight { get; set; }
-        int reps { get; set; }
-        int setNumber { get; set; }
+        public double weight { get; set; }
+        public int reps { get; set; }
+        public int setNumber { get; set; }
 
         public Set(double weight, int reps, int setNumber)
         {
