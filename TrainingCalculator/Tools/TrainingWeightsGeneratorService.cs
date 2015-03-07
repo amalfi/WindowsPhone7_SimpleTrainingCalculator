@@ -103,9 +103,6 @@ namespace TrainingCalculator
         {
             //Addidtional info : after every weeke you add 2% of your maximum RPM to every working set
             Dictionary<int, Set> listOfSets = new Dictionary<int, Set>();
-            //1.Od wagi zadanej odejmujesz 12 %
-            //Waga zadana -12 % - ostatnia seria robocza danego cwiczenia
-            //Od ostatniej serii roboczej danego cwiczenia odejmujesz po 10% az bedziesz mial 5 serii roboczych
             double percentValueFromMaximumWeight = 0.12 * maximumWeightForChoosedExcersise;
 
             double lastWorkingSet = maximumWeightForChoosedExcersise - percentValueFromMaximumWeight;

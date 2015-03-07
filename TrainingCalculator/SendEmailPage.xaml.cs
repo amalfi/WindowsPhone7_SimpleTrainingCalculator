@@ -11,6 +11,8 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Tasks;
+using System.Diagnostics;
+using Microsoft.Phone.Shell;
 
 namespace TrainingCalculator
 {
@@ -27,19 +29,21 @@ namespace TrainingCalculator
         }
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            //
+           
         }
 
         private void button2_Click(object sender, RoutedEventArgs e)
         {
             //Przycisk wysylajacy e-meile
             var emailComposeTask = new EmailComposeTask();
+            string emailRecipient = emailAdressInputBox.Text.ToString();
+            string messageBody = PhoneApplicationService.Current.State["setsWithDescriptionTextArea"].ToString();
 
-            emailComposeTask.Subject = "message subject";
-            emailComposeTask.Body = "message body";
-            emailComposeTask.To = "mberendt546@gmail.com";
-            emailComposeTask.Cc = "mberendt546@gmail.com";
-            emailComposeTask.Bcc = "mberendt546@gmail.com";
+            emailComposeTask.Subject = "Your excersise schema !";
+            emailComposeTask.Body = messageBody; 
+            emailComposeTask.To = emailRecipient;
+            emailComposeTask.Cc = emailRecipient;
+            emailComposeTask.Bcc = emailRecipient;
 
             emailComposeTask.Show();
         }

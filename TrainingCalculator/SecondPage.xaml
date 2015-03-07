@@ -31,7 +31,7 @@
             <TextBlock FontSize="30" FontWeight="Bold" Height="43" HorizontalAlignment="Left" Margin="18,28,0,0" Name="textBlock2" Text="Enter  your PRM for excersise" VerticalAlignment="Top" Width="438" />
             <Button Content="Next Step" Height="94" HorizontalAlignment="Left" Margin="92,396,0,0" Name="button1" VerticalAlignment="Top" Width="260" Click="button1_Click" />
             <TextBox Height="72" HorizontalAlignment="Left" Margin="-4,94,0,0" Name="maximumWeight" Text="" VerticalAlignment="Top" Width="460" TextChanged="textBox2_TextChanged" />
-            <CheckBox Content="Yes" HorizontalAlignment="Left" IsEnabled="True" IsThreeState="False" Margin="148,270,0,311" Name="checkBox1" Width="190" />
+            <CheckBox Content="Yes" HorizontalAlignment="Left" IsEnabled="True" IsThreeState="False" Margin="148,270,0,311" Name="checkBox1" Width="190" Checked="assistanceExcersisesChecked" />
             <TextBlock FontSize="30" FontWeight="Bold" Height="48" HorizontalAlignment="Left" Margin="12,216,0,0" Name="textBlock1" Text="Generate assistance excersises" VerticalAlignment="Top" Width="438" />
             <Button Content="Previous Step" Height="94" HorizontalAlignment="Left" Margin="92,496,0,0" Name="button2" VerticalAlignment="Top" Width="260" Click="button2_Click" />
         </Grid>

@@ -29,11 +29,16 @@
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <Button Content="Take me to main page" Height="94" HorizontalAlignment="Left" Margin="65,545,0,0" Name="button1" VerticalAlignment="Top" Width="321" Click="button1_Click" />
-            <Button Content="Send me email with calculations" Height="94" HorizontalAlignment="Left" Margin="18,345,0,0" Name="button2" VerticalAlignment="Top" Width="438" Click="button2_Click" />
+            <Button Content="Send me email with calculations" Height="94" HorizontalAlignment="Left" Margin="18,345,0,0" Name="button2" VerticalAlignment="Top" Width="438" Click="sendEmailWithCalculationsHandler" />
             <Button Content="Previous Page" Height="94" HorizontalAlignment="Left" Margin="93,445,0,0" Name="button3" VerticalAlignment="Top" Width="260" Click="button3_Click" />
-            <TextBox Height="316" HorizontalAlignment="Left" Margin="6,18,0,0" Name="setsWithDescriptionTextArea" Text="Sets with description" VerticalAlignment="Top" Width="444" />
+            <!--<TextBox Height="316" HorizontalAlignment="Left" Margin="6,18,0,0" Name="setsWithDescriptionTextArea" Text="Sets with description" VerticalAlignment="Top" Width="444" />
+            -->
+            <ScrollViewer HorizontalScrollBarVisibility="Auto" Canvas.Top="60" Canvas.Left="340" Margin="5,-2,6,317">
+                <TextBlock TextWrapping="Wrap" Name="setsWithDescriptionTextArea" Text="" Margin="4,2,6,456" />
+            </ScrollViewer>
         </Grid>
         <TextBox Grid.Row="1" Height="72" HorizontalAlignment="Left" Margin="506,48,0,0" Name="textBox1" Text="TextBox" VerticalAlignment="Top" Width="460" />
+      
     </Grid>
 
     <!--Sample code showing usage of ApplicationBar-->

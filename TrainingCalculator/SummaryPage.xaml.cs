@@ -13,7 +13,6 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Tasks;
 using Microsoft.Phone.Shell;
 using System.Collections;
-using System.Collections.Generic;
 using TrainingCalculator.Tools;
 using System.Diagnostics;
 
@@ -48,9 +47,9 @@ namespace TrainingCalculator
 
             Dictionary<int,Set> allSets = (Dictionary<int,Set>) PhoneApplicationService.Current.State["allSets"];
             string valueOfsetsWithDescriptionTextArea = setTextInSetsDescriptionArea(allSets);
-
             setsWithDescriptionTextArea.Text = valueOfsetsWithDescriptionTextArea;
 
+            PhoneApplicationService.Current.State["setsWithDescriptionTextArea"] = setsWithDescriptionTextArea;
         }
 
         private string setTextInSetsDescriptionArea(Dictionary<int, Set> allSets)
@@ -65,7 +64,13 @@ namespace TrainingCalculator
                 textToSetInComponent = textToSetInComponent + currentLine;
             }
 
-            return textToSetInComponent;
+            string asistanceExcersises = (String)PhoneApplicationService.Current.State["assistanceExcersises"];
+            return textToSetInComponent + " \n Assistance Excersises \n"+asistanceExcersises;
+        }
+
+        private void sendEmailWithCalculationsHandler(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/SendEmailPage.xaml", UriKind.Relative));
         }
       
 
