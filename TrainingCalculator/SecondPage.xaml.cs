@@ -50,9 +50,27 @@ namespace TrainingCalculator
             setDAO.settedExcersiseNameAndRepetitionSchema = excersiseAndRepetitionSchema;
             setDAO.setAllSets(typedMaximumWeightDouble);
 
+            string assistanceExcersises = "";
+            if (assistanceExcersisesCheckbox.IsChecked==true)
+            {
+                if (excersiseName.Equals("squatChecked"))
+                {
+                    assistanceExcersises = "Good Mornings : \n 5 sets x 10 reps  \n Lying Dead Curls : \n 5 sets x 12 reps  \n Leg Extensions : \n 5 sets x 12 reps";
+                }
+                else if (excersiseName.Equals("deadliftChecked"))
+                {
+                    assistanceExcersises = "Pull Ups : 5 sets x 10 reps \n One Arm Dumbell Row : 5 sets x 10 reps \n Horizontal Row : 5 sets x 10 reps  \n Biceps Dumbell Curls : 5 sets x 10 reps";
+                }
+                else if (excersiseName.Equals("benchPressChecked"))
+                {
+                    assistanceExcersises = "Military Shoulder Press :  5 sets x 10 Reps \n Shoulder lateral raises : 5 sets x 15 reps \n Triceps Pushdowns : 5 sets x 10 reps";
+                }
+            }
+            PhoneApplicationService.Current.State["assistanceExcersises"] = assistanceExcersises;
+
             try
             {
-                string asistanceExcersises = (String)PhoneApplicationService.Current.State["assistanceExcersises"];
+               // string asistanceExcersises = (String)PhoneApplicationService.Current.State["assistanceExcersises"];
                 
                 PhoneApplicationService.Current.State["allSets"] = setDAO.sets;
                 //dodanie informacji o cwiczeniach asystujacych jezeli byl zaznaczony checkbox
@@ -75,23 +93,7 @@ namespace TrainingCalculator
 
         private void assistanceExcersisesChecked(object sender, RoutedEventArgs e) //turn assistance excersises checked
         {
-            string assistanceExcersises = "";
-            string excersiseName = PhoneApplicationService.Current.State["excersiseName"].ToString();
-          
-            if (excersiseName.Equals("squatChecked"))
-            {
-                assistanceExcersises = "Good Mornings : \n 5 sets x 10 reps  \n Lying Dead Curls : \n 5 sets x 12 reps  \n Leg Extensions : \n 5 sets x 12 reps";
-            }
-            else if (excersiseName.Equals("deadliftChecked"))
-            {
-                assistanceExcersises = "Pull Ups : 5 sets x 10 reps \n One Arm Dumbell Row : 5 sets x 10 reps \n Horizontal Row : 5 sets x 10 reps  \n Biceps Dumbell Curls : 5 sets x 10 reps";
-            }
-            else if (excersiseName.Equals("benchPressChecked"))
-            {
-                assistanceExcersises = "Military Shoulder Press :  5 sets x 10 Reps \n Shoulder lateral raises : 5 sets x 15 reps \n Triceps Pushdowns : 5 sets x 10 reps";
-            }
-
-            PhoneApplicationService.Current.State["assistanceExcersises"] = assistanceExcersises;
+         
         }
     }
 }

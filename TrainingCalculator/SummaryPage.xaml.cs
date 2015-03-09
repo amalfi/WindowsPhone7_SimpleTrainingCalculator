@@ -41,10 +41,6 @@ namespace TrainingCalculator
 
         private void PhoneApplicationPage_Loaded(object sender, RoutedEventArgs e) //onReady event on SummaryPage.xaml
         {
-            //get Data from proper parameter
-            var allSetsVariable = PhoneApplicationService.Current.State["allSets"];
-            Debug.WriteLine("Object loaden in PhoneApplicationService under allSets key" + allSetsVariable);
-
             Dictionary<int,Set> allSets = (Dictionary<int,Set>) PhoneApplicationService.Current.State["allSets"];
             string valueOfsetsWithDescriptionTextArea = setTextInSetsDescriptionArea(allSets);
             setsWithDescriptionTextArea.Text = valueOfsetsWithDescriptionTextArea;
@@ -65,7 +61,8 @@ namespace TrainingCalculator
             }
 
             string asistanceExcersises = (String)PhoneApplicationService.Current.State["assistanceExcersises"];
-            return textToSetInComponent + " \n Assistance Excersises \n"+asistanceExcersises;
+            
+            return textToSetInComponent + " \n \n"+asistanceExcersises;
         }
 
         private void sendEmailWithCalculationsHandler(object sender, RoutedEventArgs e)
