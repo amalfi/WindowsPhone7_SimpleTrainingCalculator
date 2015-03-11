@@ -13,3 +13,6 @@ c:\users\marcin\documents\visual studio 2010\Projects\TrainingCalculator\Trainin
 c:\users\marcin\documents\visual studio 2010\Projects\TrainingCalculator\TrainingCalculator\obj\Debug\XapCacheFile.xml
 c:\users\marcin\documents\visual studio 2010\Projects\TrainingCalculator\TrainingCalculator\obj\Debug\SummaryPage.g.i.cs
 c:\users\marcin\documents\visual studio 2010\Projects\TrainingCalculator\TrainingCalculator\obj\Debug\SendEmailPage.g.i.cs
+C:\Users\Marcin\documents\visual studio 2010\Projects\TrainingCalculator\TrainingCalculator\Bin\Debug\Vici.Core.WP7.dll
+C:\Users\Marcin\documents\visual studio 2010\Projects\TrainingCalculator\TrainingCalculator\obj\Debug\TrainingCalculator.csprojResolveAssemblyReference.cache
+C:\Users\Marcin\documents\visual studio 2010\Projects\TrainingCalculator\TrainingCalculator\Bin\Debug\sqliteDll.dll
