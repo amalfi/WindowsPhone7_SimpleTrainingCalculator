@@ -50,9 +50,7 @@
   <ItemGroup>
     <Reference Include="Microsoft.Phone" />
     <Reference Include="Microsoft.Phone.Interop" />
-    <Reference Include="sqliteDll">
-      <HintPath>..\..\..\..\..\Desktop\sqliteDll.dll</HintPath>
-    </Reference>
+    <Reference Include="system.data.linq" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Windows" />
     <Reference Include="system" />
@@ -68,6 +66,12 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PreviouslySavedWorkout.xaml.cs">
+      <DependentUpon>PreviouslySavedWorkout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SecondMainPage.xaml.cs">
+      <DependentUpon>SecondMainPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SecondPage.xaml.cs">
       <DependentUpon>SecondPage.xaml</DependentUpon>
     </Compile>
@@ -78,9 +82,11 @@
     <Compile Include="SummaryPage.xaml.cs">
       <DependentUpon>SummaryPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tools\DBHelper.cs" />
+    <Compile Include="Tools\DatabaseTools.cs" />
     <Compile Include="Tools\SetDAO.cs" />
     <Compile Include="Tools\Set.cs" />
+    <Compile Include="Tools\SetForDB.cs" />
+    <Compile Include="Tools\SetForDBContext.cs" />
     <Compile Include="Tools\TrainingWeightsGeneratorService.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -89,6 +95,14 @@
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
     <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PreviouslySavedWorkout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SecondMainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

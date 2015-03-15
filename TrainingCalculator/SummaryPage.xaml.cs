@@ -16,10 +16,13 @@ using System.Collections;
 using TrainingCalculator.Tools;
 using System.Diagnostics;
 
+
 namespace TrainingCalculator
 {
     public partial class SummaryPage : PhoneApplicationPage
     {
+        private const string strConnectionString = @"isostore:/SetsDB.sdf";
+
         public SummaryPage()
         {
             InitializeComponent();
@@ -27,7 +30,7 @@ namespace TrainingCalculator
 
         private void button2_Click(object sender, RoutedEventArgs e)
         {
-           
+
         }
         private void button1_Click(object sender, RoutedEventArgs e)
         {
@@ -41,7 +44,7 @@ namespace TrainingCalculator
 
         private void PhoneApplicationPage_Loaded(object sender, RoutedEventArgs e) //onReady event on SummaryPage.xaml
         {
-            Dictionary<int,Set> allSets = (Dictionary<int,Set>) PhoneApplicationService.Current.State["allSets"];
+            Dictionary<int, Set> allSets = (Dictionary<int, Set>)PhoneApplicationService.Current.State["allSets"];
             string valueOfsetsWithDescriptionTextArea = setTextInSetsDescriptionArea(allSets);
             setsWithDescriptionTextArea.Text = valueOfsetsWithDescriptionTextArea;
 
@@ -61,15 +64,20 @@ namespace TrainingCalculator
             }
 
             string asistanceExcersises = (String)PhoneApplicationService.Current.State["assistanceExcersises"];
-            
-            return textToSetInComponent + " \n \n"+asistanceExcersises;
+
+            return textToSetInComponent + " \n \n" + asistanceExcersises;
         }
 
         private void sendEmailWithCalculationsHandler(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("/SendEmailPage.xaml", UriKind.Relative));
         }
-      
 
+        private void saveWorkoutToDB(object sender, RoutedEventArgs e)
+        {
+            DatabaseTools databseTools = new DatabaseTools();
+            databseTools.saveWorkoutToDB();
+        }
     }
+
 }
