@@ -51,6 +51,12 @@ namespace TrainingCalculator.Tools
                 get;
                 set;
             }
+            [Column(CanBeNull = false)]
+            public String AdditionalExcersises
+            {
+                get;
+                set;
+            }
 
           
         }

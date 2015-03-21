@@ -38,15 +38,16 @@ namespace TrainingCalculator.Tools
                     Set currentSet = item.Value;
                     double currentWeight = currentSet.weight;
                     int currentReps = currentSet.reps;
+                    String  asistanceExcersises = (String)PhoneApplicationService.Current.State["assistanceExcersises"];
 
                     SetForDB set = new SetForDB
                     {
-                        //WorkoutID : pobranie ostatniego workout id z bazy i ustalenie workout id jako X+1 (przed petla)
                         WorkoutID = lastWorkoutIdNumber.ToString(),
                         SetID = lastIdNumber.ToString(),
                         Reps = currentReps.ToString(),
                         Weight = currentWeight.ToString(),
-                        SetNumber = numberOfSet.ToString()
+                        SetNumber = numberOfSet.ToString(),
+                        AdditionalExcersises = asistanceExcersises.ToString()
                     };
                     try
                     {

@@ -20,7 +20,7 @@ using System.Text;
 namespace TrainingCalculator
 {
     public partial class PreviouslySavedWorkout : PhoneApplicationPage
-    {
+    {   
 
         public PreviouslySavedWorkout()
         {
@@ -47,12 +47,19 @@ namespace TrainingCalculator
             DatabaseTools databaseTools = new DatabaseTools();
             IList<SetForDB> SetsList = databaseTools.getAllSetsFromDB();
             StringBuilder strBuilder = new StringBuilder();
-                foreach (SetForDB currentSet in SetsList)
+            //SetForDB currentSet in SetsList
+            for (int i = 0; i < SetsList.Count; i++ )
+            {
+                SetForDB currentSet = SetsList[i];
+                strBuilder.AppendLine("Workout ID : " + currentSet.WorkoutID + " \n SetID :" + currentSet.SetID + " Amount of reps :" + currentSet.Reps + " Weight :" + currentSet.Weight + "\n");
+                if (i == SetsList.Count - 1)
                 {
-                    strBuilder.AppendLine("Workout ID : " + currentSet.WorkoutID + " \n SetID :" + currentSet.SetID + " Amount of reps :" + currentSet.Reps + " Weight :" + currentSet.Weight + "\n");
+                    strBuilder.AppendLine(" \n Additional Excersises : " + currentSet.AdditionalExcersises);
                 }
-
+            }
+                
                 previouslySavedWorkoutsTextBlock.Text = strBuilder.ToString();
+                
            
         }
     }

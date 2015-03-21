@@ -21,16 +21,17 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Margin="12,17,12,856" Height="70">
-            <TextBlock Name="ApplicationTitle" Style="{StaticResource PhoneTextNormalStyle}" Text="s9717" />
-            <TextBlock FontSize="28" Name="PageTitle" Style="{StaticResource PhoneTextTitle1Style}" Text="Training Weight Calculator" />
-
-            
+     
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0"></Grid>
-        <Button Content="Previous Page" Height="72" HorizontalAlignment="Left" Margin="140,546,0,0" Name="button1" VerticalAlignment="Top" Width="226" Click="button1_Click" Loaded="button1_Loaded" />
-        <TextBlock Height="451" HorizontalAlignment="Left" Margin="12,93,0,0" Name="previouslySavedWorkoutsTextBlock" Text="" VerticalAlignment="Top" Width="456" />
+        
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" Canvas.Top="60" Canvas.Left="340" Margin="5,-2,6,367">
+            <TextBlock TextWrapping="Wrap" Name="previouslySavedWorkoutsTextBlock" Text="" Margin="4,2,6,456" />
+        </ScrollViewer>
+        <Button Content="Previous Page" Height="72" HorizontalAlignment="Left" Margin="136,592,0,0" Name="button1" VerticalAlignment="Top" Width="226" Click="button1_Click" Loaded="button1_Loaded" />
+
     </Grid>
  
     <!--Sample code showing usage of ApplicationBar-->
