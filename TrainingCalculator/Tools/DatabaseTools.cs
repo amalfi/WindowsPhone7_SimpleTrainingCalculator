@@ -76,8 +76,16 @@ namespace TrainingCalculator.Tools
             IList<SetForDB> SetsList = null;
             using (SetForDBContext Empdb = new SetForDBContext(strConnectionString))
             {
-                IQueryable<SetForDB> SetQuery = from Set in Empdb.SetsForDB select Set;
-                SetsList = SetQuery.ToList();
+                try
+                {
+                    IQueryable<SetForDB> SetQuery = from Set in Empdb.SetsForDB select Set;
+                    SetsList = SetQuery.ToList();
+                }
+                catch (Exception exception)
+                {
+                    Debug.WriteLine(exception.StackTrace.ToString());
+                    MessageBox.Show("Error during listing records from database");
+                }
             }
 
             foreach (SetForDB currentSetFromList in SetsList)

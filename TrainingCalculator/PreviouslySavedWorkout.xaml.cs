@@ -49,10 +49,10 @@ namespace TrainingCalculator
             StringBuilder strBuilder = new StringBuilder();
                 foreach (SetForDB currentSet in SetsList)
                 {
-                    strBuilder.AppendLine("Workout ID : " + currentSet.WorkoutID + " \n SetID :" + currentSet.SetID + "Amount of reps :" + currentSet.Reps + "Weight :" + currentSet.Weight + "\n");
+                    strBuilder.AppendLine("Workout ID : " + currentSet.WorkoutID + " \n SetID :" + currentSet.SetID + " Amount of reps :" + currentSet.Reps + " Weight :" + currentSet.Weight + "\n");
                 }
 
-                previouslySavedWorkoutTextArea.Text = strBuilder.ToString();
+                previouslySavedWorkoutsTextBlock.Text = strBuilder.ToString();
            
         }
     }

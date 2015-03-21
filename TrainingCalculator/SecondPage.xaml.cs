@@ -25,7 +25,20 @@ namespace TrainingCalculator
 
         private void textBox2_TextChanged(object sender, TextChangedEventArgs e)
         {
-            
+            //sprawdzenie czy liczba zmiennoprzecinkowa - double ?]
+            if (!checkIfGivenValueIsNumber())
+            {
+                MessageBox.Show("Entered value is NOT a number !");
+            }
+        }
+
+        private bool checkIfGivenValueIsNumber()
+        {
+            string valueFromTextBox = maximumWeight.Text.ToString();
+            double n;
+            bool isNumeric = double.TryParse(valueFromTextBox, out n);
+
+            return isNumeric;
         }
 
         private void button1_Click(object sender, RoutedEventArgs e) //next page handler

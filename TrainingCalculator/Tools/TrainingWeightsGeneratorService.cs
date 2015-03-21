@@ -57,7 +57,6 @@ namespace TrainingCalculator
                     if (currentKey.Equals("threeThreeChecked"))
                     {
                         checkedBoxesValues.Add("repSchema", item.Key.ToString());
-
                     }      
                 }
             }
