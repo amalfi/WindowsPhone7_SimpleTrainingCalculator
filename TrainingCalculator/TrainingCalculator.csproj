@@ -122,7 +122,6 @@
   <ItemGroup>
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml" />
-    <None Include="trainings.sqlite" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ApplicationIcon.png">
