@@ -12,17 +12,17 @@ using System.Data.Linq;
 
 namespace TrainingCalculator.Tools
 {
-    public class SetForDBContext : DataContext
+    public class SetModelContext : DataContext
     {
-        public SetForDBContext(string connectionString)
+        public SetModelContext(string connectionString)
             : base(connectionString)
         {
         }
-        public Table<SetForDB> SetsForDB
+        public Table<SetModel> SetsForDB
         {
             get
             {
-                return this.GetTable<SetForDB>();
+                return this.GetTable<SetModel>();
             }
         }
     }

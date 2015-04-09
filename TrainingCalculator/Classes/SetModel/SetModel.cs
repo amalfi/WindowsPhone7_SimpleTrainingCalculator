@@ -19,7 +19,7 @@ namespace TrainingCalculator.Tools
     */
   
         [Table]
-        public class SetForDB
+        public class SetModel
         {
             [Column(IsPrimaryKey = true)]
             public String SetID

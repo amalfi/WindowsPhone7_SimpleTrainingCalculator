@@ -63,6 +63,8 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Classes\Other Tools\ViewsTools.cs" />
+    <Compile Include="Classes\TemporarySet\DatabaseTools.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -82,12 +84,13 @@
     <Compile Include="SummaryPage.xaml.cs">
       <DependentUpon>SummaryPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tools\DatabaseTools.cs" />
-    <Compile Include="Tools\SetDAO.cs" />
-    <Compile Include="Tools\Set.cs" />
-    <Compile Include="Tools\SetForDB.cs" />
-    <Compile Include="Tools\SetForDBContext.cs" />
-    <Compile Include="Tools\TrainingWeightsGeneratorService.cs" />
+    <Compile Include="Classes\SetModel\SetModelDAO.cs" />
+    <Compile Include="Classes\SetModel\SetModelDAOImpl.cs" />
+    <Compile Include="Classes\TemporarySet\TemporarySetModelTools.cs" />
+    <Compile Include="Classes\TemporarySet\TemporarySetModel.cs" />
+    <Compile Include="Classes\SetModel\SetModel.cs" />
+    <Compile Include="Classes\SetModel\SetModelContext.cs" />
+    <Compile Include="Classes\Other Tools\TrainingWeightsGenerationTools.cs" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">

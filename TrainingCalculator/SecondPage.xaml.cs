@@ -25,7 +25,6 @@ namespace TrainingCalculator
 
         private void textBox2_TextChanged(object sender, TextChangedEventArgs e)
         {
-            //sprawdzenie czy liczba zmiennoprzecinkowa - double ?]
             if (!checkIfGivenValueIsNumber())
             {
                 MessageBox.Show("Entered value is NOT a number !");
@@ -44,7 +43,7 @@ namespace TrainingCalculator
         private void button1_Click(object sender, RoutedEventArgs e) //next page handler
         {
             bool validationDoneProperly = true;
-            SetDAO setDAO = new SetDAO();
+            TemporarySetModelTools setDAO = new TemporarySetModelTools();
             string typedMaximumWeightString = maximumWeight.Text.ToString();
             if (typedMaximumWeightString.Equals(""))
             {

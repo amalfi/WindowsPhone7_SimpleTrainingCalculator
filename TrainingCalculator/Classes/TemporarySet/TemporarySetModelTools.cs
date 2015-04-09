@@ -13,30 +13,30 @@ using System.Diagnostics;
 
 namespace TrainingCalculator.Tools
 {
-    public class SetDAO
+    public class TemporarySetModelTools
     {
-        public Dictionary<int, Set> sets = new Dictionary<int, Set>();
+        public Dictionary<int, TemporarySetModel> sets = new Dictionary<int, TemporarySetModel>();
         public Dictionary<string, string> settedExcersiseNameAndRepetitionSchema = new Dictionary<string, string>();
 
-        public Dictionary<string, Set> getexcersiseNameAndRepetitionSchema(Dictionary<string, Set> excersiseNameAndRepetitionSchema)
+        public Dictionary<string, TemporarySetModel> getexcersiseNameAndRepetitionSchema(Dictionary<string, TemporarySetModel> excersiseNameAndRepetitionSchema)
         {
             return excersiseNameAndRepetitionSchema;
         }
 
         public void setExcersiseNameAndRepetitionSchema(Dictionary<string, bool?> checkboxesDictionary)
         {
-            TrainingWeightsGeneratorService trainingWeightGeneratorService = new TrainingWeightsGeneratorService();
+            TrainingWeightsGenerationTools trainingWeightGeneratorService = new TrainingWeightsGenerationTools();
             settedExcersiseNameAndRepetitionSchema = trainingWeightGeneratorService.setTypeOfExcersiseAndRepSchema(checkboxesDictionary);
         }
 
-        public Dictionary<int, Set> getAllSets(Dictionary<int,Set> introData)
+        public Dictionary<int, TemporarySetModel> getAllSets(Dictionary<int,TemporarySetModel> introData)
         {
             return sets;
         }
 
         public void setAllSets(double maximumWeightForGivenExcersise)
         {
-            TrainingWeightsGeneratorService twss = new TrainingWeightsGeneratorService();
+            TrainingWeightsGenerationTools twss = new TrainingWeightsGenerationTools();
             foreach (var item in settedExcersiseNameAndRepetitionSchema)
             {
                 Debug.WriteLine(item.Key);

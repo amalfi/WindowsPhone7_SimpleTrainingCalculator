@@ -16,6 +16,7 @@ using System.Collections;
 using TrainingCalculator.Tools;
 using System.Diagnostics;
 using System.Text;
+using TrainingCalculator.Classes.Other_Tools;
 
 namespace TrainingCalculator
 {
@@ -44,23 +45,8 @@ namespace TrainingCalculator
 
         private void LayoutRoot_Loaded(object sender, RoutedEventArgs e)
         {
-            DatabaseTools databaseTools = new DatabaseTools();
-            IList<SetForDB> SetsList = databaseTools.getAllSetsFromDB();
-            StringBuilder strBuilder = new StringBuilder();
-            //SetForDB currentSet in SetsList
-            for (int i = 0; i < SetsList.Count; i++ )
-            {
-                SetForDB currentSet = SetsList[i];
-                strBuilder.AppendLine("Workout ID : " + currentSet.WorkoutID + " \n SetID :" + currentSet.SetID + " Amount of reps :" + currentSet.Reps + " Weight :" + currentSet.Weight + "\n");
-                if (i == SetsList.Count - 1)
-                {
-                    strBuilder.AppendLine(" \n Additional Excersises : " + currentSet.AdditionalExcersises);
-                }
-            }
-                
-                previouslySavedWorkoutsTextBlock.Text = strBuilder.ToString();
-                
-           
+           ViewsTools viewsTools = new ViewsTools();
+           previouslySavedWorkoutsTextBlock.Text = viewsTools.generatePreviouslySavedWorkoutsText();
         }
     }
 }

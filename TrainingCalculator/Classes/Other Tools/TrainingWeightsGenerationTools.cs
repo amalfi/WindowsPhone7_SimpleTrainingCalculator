@@ -14,7 +14,7 @@ using System.Diagnostics;
 
 namespace TrainingCalculator
 {
-    public class TrainingWeightsGeneratorService
+    public class TrainingWeightsGenerationTools
     {
         //Function which get collection of all checboxes from first view and return selected excersise and selected rep schema
         public Dictionary<string, string> setTypeOfExcersiseAndRepSchema(Dictionary<string, bool?> mapOfCheckboxValues)
@@ -26,7 +26,7 @@ namespace TrainingCalculator
                 Debug.WriteLine(item.Value);
             }
 
-            SetDAO setDao = new SetDAO();
+            TemporarySetModelTools setDao = new TemporarySetModelTools();
             foreach (var item in mapOfCheckboxValues)
             {
                 if (item.Value == true)
@@ -64,9 +64,9 @@ namespace TrainingCalculator
                 
         }
 
-        public Dictionary<int, Set> setMapOfSetsWithWeightForGivenExcersiseAndRepSchema(Dictionary<string, string> checkboxesDictionary, double maximumWeightForChoosedExcersise)
+        public Dictionary<int, TemporarySetModel> setMapOfSetsWithWeightForGivenExcersiseAndRepSchema(Dictionary<string, string> checkboxesDictionary, double maximumWeightForChoosedExcersise)
         {
-            Dictionary<int, Set> generatedSet = new Dictionary<int, Set>();
+            Dictionary<int, TemporarySetModel> generatedSet = new Dictionary<int, TemporarySetModel>();
             //checkboxes dictionary jest puste
             Debug.WriteLine("Size of checkboxesDictionary :" + checkboxesDictionary.Count);
             foreach (var item in checkboxesDictionary)
@@ -98,22 +98,22 @@ namespace TrainingCalculator
             return generatedSet;
         }
 
-        private Dictionary<int, Set> generateListOfSetsFor55(double maximumWeightForChoosedExcersise)
+        private Dictionary<int, TemporarySetModel> generateListOfSetsFor55(double maximumWeightForChoosedExcersise)
         {
             //Addidtional info : after every weeke you add 2% of your maximum RPM to every working set
-            Dictionary<int, Set> listOfSets = new Dictionary<int, Set>();
+            Dictionary<int, TemporarySetModel> listOfSets = new Dictionary<int, TemporarySetModel>();
             double percentValueFromMaximumWeight = 0.12 * maximumWeightForChoosedExcersise;
 
             double lastWorkingSet = maximumWeightForChoosedExcersise - percentValueFromMaximumWeight;
-            Set fifthSet = new Set(lastWorkingSet, 5, 5);
+            TemporarySetModel fifthSet = new TemporarySetModel(lastWorkingSet, 5, 5);
             double fourthWorkingSet = lastWorkingSet-0.1*maximumWeightForChoosedExcersise;
-            Set fourthSet = new Set(fourthWorkingSet, 5, 5);
+            TemporarySetModel fourthSet = new TemporarySetModel(fourthWorkingSet, 5, 5);
             double thirdWorkingSet = fourthWorkingSet - 0.1 * maximumWeightForChoosedExcersise;
-            Set thirdSet = new Set(thirdWorkingSet, 5, 5);
+            TemporarySetModel thirdSet = new TemporarySetModel(thirdWorkingSet, 5, 5);
             double secondWorkingSet = thirdWorkingSet - 0.1 * maximumWeightForChoosedExcersise;
-            Set secondSet = new Set(secondWorkingSet, 5, 5);
+            TemporarySetModel secondSet = new TemporarySetModel(secondWorkingSet, 5, 5);
             double firstWorkingSet = secondWorkingSet - 0.1 * maximumWeightForChoosedExcersise;
-            Set firstSet = new Set(firstWorkingSet, 5, 5);
+            TemporarySetModel firstSet = new TemporarySetModel(firstWorkingSet, 5, 5);
 
             listOfSets.Add(1, firstSet);
             listOfSets.Add(2, secondSet);
@@ -124,27 +124,27 @@ namespace TrainingCalculator
             return listOfSets;
         }
 
-        private Dictionary<int, Set> generateListOfSetsFor66(double maximumWeightForChoosedExcersise)
+        private Dictionary<int, TemporarySetModel> generateListOfSetsFor66(double maximumWeightForChoosedExcersise)
         {
             //if you are able to do 6x6 sets with 30 seconds rest, you add 2% to your working sets
-            Dictionary<int, Set> listOfSets = new Dictionary<int, Set>();
+            Dictionary<int, TemporarySetModel> listOfSets = new Dictionary<int, TemporarySetModel>();
             double workingSetValue = 0.7 * maximumWeightForChoosedExcersise;
             for (int i = 0; i < 5; i++)
             {
-                Set currentSet = new Set(workingSetValue, 6, i);
+                TemporarySetModel currentSet = new TemporarySetModel(workingSetValue, 6, i);
                 listOfSets.Add(i, currentSet);
             }
 
             return listOfSets;
         }
 
-        private Dictionary<int, Set> generateListOfSetsFor33(double maximumWeightForChoosedExcersise)
+        private Dictionary<int, TemporarySetModel> generateListOfSetsFor33(double maximumWeightForChoosedExcersise)
         {
-            Dictionary<int, Set> listOfSets = new Dictionary<int, Set>();
+            Dictionary<int, TemporarySetModel> listOfSets = new Dictionary<int, TemporarySetModel>();
             double workingSetValue = 0.9 * maximumWeightForChoosedExcersise;
             for (int i = 0; i < 3; i++)
             {
-                Set currentSet = new Set(workingSetValue, 3, 3);
+                TemporarySetModel currentSet = new TemporarySetModel(workingSetValue, 3, 3);
                 listOfSets.Add(i,currentSet);
             }
 

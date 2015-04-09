@@ -13,13 +13,13 @@ using System.Diagnostics;
 
 namespace TrainingCalculator.Tools
 {
-    public class Set
+    public class TemporarySetModel
     {
         public double weight { get; set; }
         public int reps { get; set; }
         public int setNumber { get; set; }
 
-        public Set(double weight, int reps, int setNumber)
+        public TemporarySetModel(double weight, int reps, int setNumber)
         {
             this.weight = weight;
             this.reps = reps;

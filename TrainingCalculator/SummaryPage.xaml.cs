@@ -15,6 +15,7 @@ using Microsoft.Phone.Shell;
 using System.Collections;
 using TrainingCalculator.Tools;
 using System.Diagnostics;
+using TrainingCalculator.Classes.Other_Tools;
 
 
 namespace TrainingCalculator
@@ -44,29 +45,15 @@ namespace TrainingCalculator
 
         private void PhoneApplicationPage_Loaded(object sender, RoutedEventArgs e) //onReady event on SummaryPage.xaml
         {
-            Dictionary<int, Set> allSets = (Dictionary<int, Set>)PhoneApplicationService.Current.State["allSets"];
-            string valueOfsetsWithDescriptionTextArea = setTextInSetsDescriptionArea(allSets);
+            ViewsTools viewsTools = new ViewsTools();
+            Dictionary<int, TemporarySetModel> allSets = (Dictionary<int, TemporarySetModel>)PhoneApplicationService.Current.State["allSets"];
+            string valueOfsetsWithDescriptionTextArea = viewsTools.setTextInSetsDescriptionArea(allSets);
             setsWithDescriptionTextArea.Text = valueOfsetsWithDescriptionTextArea;
 
             PhoneApplicationService.Current.State["setsWithDescriptionTextArea"] = setsWithDescriptionTextArea;
         }
 
-        private string setTextInSetsDescriptionArea(Dictionary<int, Set> allSets)
-        {
-            string textToSetInComponent = "";
-
-            foreach (var item in allSets)
-            {
-                int numberOfSet = item.Key;
-                Set currentSet = item.Value;
-                string currentLine = "Set " + numberOfSet + " : " + currentSet.weight + " x " + currentSet.reps + " reps \n";
-                textToSetInComponent = textToSetInComponent + currentLine;
-            }
-
-            string asistanceExcersises = (String)PhoneApplicationService.Current.State["assistanceExcersises"];
-
-            return textToSetInComponent + " \n \n" + asistanceExcersises;
-        }
+      
 
         private void sendEmailWithCalculationsHandler(object sender, RoutedEventArgs e)
         {
@@ -75,7 +62,7 @@ namespace TrainingCalculator
 
         private void saveWorkoutToDB(object sender, RoutedEventArgs e)
         {
-            DatabaseTools databseTools = new DatabaseTools();
+            SetModelDAOImpl databseTools = new SetModelDAOImpl();
             databseTools.saveWorkoutToDB();
         }
     }

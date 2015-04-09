@@ -86,7 +86,7 @@ namespace TrainingCalculator
             bool validationDoneProperly = true;
             String excersiseName = "";
             String repSchema = "";
-            TrainingWeightsGeneratorService trainingWeightsGeneratorService = new TrainingWeightsGeneratorService();
+            TrainingWeightsGenerationTools trainingWeightsGeneratorService = new TrainingWeightsGenerationTools();
             Dictionary<string, bool?> checkboxesDictionary = new Dictionary<string, bool?>();
             //In this moment we add all of checkboxex boolean values do proper dictionary
             checkboxesDictionary.Add("squatChecked", squatChecked);
@@ -96,17 +96,11 @@ namespace TrainingCalculator
             checkboxesDictionary.Add("sixSixChecked", sixSixChecked);
             checkboxesDictionary.Add("threeThreeChecked", threeThreeChecked);
 
-            foreach (var item in checkboxesDictionary)
-            {
-                Debug.WriteLine(item.Key);
-                Debug.WriteLine(item.Value);
-            }
-
-            SetDAO setDAO = new SetDAO();
-            setDAO.setExcersiseNameAndRepetitionSchema(checkboxesDictionary); //It can be used for saving to database in the future
+            TemporarySetModelTools setTools = new TemporarySetModelTools();
+            setTools.setExcersiseNameAndRepetitionSchema(checkboxesDictionary); 
 
             Dictionary<string, string> settedSchema = new Dictionary<string,string>();
-            settedSchema = setDAO.settedExcersiseNameAndRepetitionSchema;
+            settedSchema = setTools.settedExcersiseNameAndRepetitionSchema;
             try
             {    
                excersiseName = settedSchema["excersiseName"];
