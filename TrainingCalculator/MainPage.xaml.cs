@@ -26,7 +26,17 @@ namespace TrainingCalculator
 
         private void createNewTrainingSchema(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/SecondMainPage.xaml", UriKind.Relative));
+                DatabaseTools dbTools = new DatabaseTools();
+                if (dbTools.checkDB()==false)
+                {
+                    MessageBox.Show("Error occured. Create new database before going further !");
+           
+                }
+                else
+                {
+                    NavigationService.Navigate(new Uri("/SecondMainPage.xaml", UriKind.Relative));
+           
+                }
         }
 
         private void showAllPreviousTrainings(object sender, RoutedEventArgs e)

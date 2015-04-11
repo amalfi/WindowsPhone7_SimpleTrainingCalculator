@@ -20,6 +20,8 @@ namespace TrainingCalculator.Classes.TemporarySet
 {
     public class DatabaseTools
     {
+        string strConnectionString = @"isostore:/SetsDB.sdf";
+
         public int getLastIdFromDatabase()
         {
             string strConnectionString = @"isostore:/SetsDB.sdf";
@@ -88,7 +90,7 @@ namespace TrainingCalculator.Classes.TemporarySet
         }
         public void createNewDB()
         {
-            string strConnectionString = @"isostore:/SetsDB.sdf";
+           
             using (SetModelContext setdb = new SetModelContext(strConnectionString))
             {
                 if (setdb.DatabaseExists() == false)
@@ -101,6 +103,29 @@ namespace TrainingCalculator.Classes.TemporarySet
                     MessageBox.Show("Sets Database already exists!!!");
                 }
             }
+        }
+
+        public bool? checkDB()
+        {
+            bool? validation = true;
+            IList<SetModel> SetsList = null;
+            using (SetModelContext setdb = new SetModelContext(strConnectionString))
+            {
+                IQueryable<SetModel> EmpQuery = from SetForDB in setdb.SetsForDB select SetForDB;
+                try
+                {
+                    SetsList = EmpQuery.ToList();
+                }
+                catch (Exception exception)
+                {
+                    validation = false;
+                    Debug.WriteLine(exception.StackTrace.ToString());
+                    // MessageBox.Show(exception.StackTrace.ToString());
+                }
+
+            }
+
+            return validation;
         }
 
     }

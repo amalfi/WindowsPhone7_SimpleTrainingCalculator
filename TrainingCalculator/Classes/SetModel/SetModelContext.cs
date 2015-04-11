@@ -14,8 +14,7 @@ namespace TrainingCalculator.Tools
 {
     public class SetModelContext : DataContext
     {
-        public SetModelContext(string connectionString)
-            : base(connectionString)
+        public SetModelContext(string connectionString) : base(connectionString)
         {
         }
         public Table<SetModel> SetsForDB

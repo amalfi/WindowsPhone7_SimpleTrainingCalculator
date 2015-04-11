@@ -61,7 +61,6 @@ namespace TrainingCalculator.Tools
                     catch (Exception exception)
                     {
                         Debug.WriteLine(exception.StackTrace.ToString());
-                        //MessageBox.Show("Error during adding workout plan to the database. Probably database doesn't exist");
                         MessageBox.Show(exception.StackTrace.ToString());
                     }
                 }
@@ -69,10 +68,10 @@ namespace TrainingCalculator.Tools
             }
 
         }
+ 
 
         public IList<SetModel> getAllSetsFromDB()
         {
-            String strConnectionString = @"isostore:/SetsDB.sdf";
             IList<SetModel> SetsList = null;
             using (SetModelContext setdb = new SetModelContext(strConnectionString))
             {
@@ -85,14 +84,15 @@ namespace TrainingCalculator.Tools
                 {
 
                     Debug.WriteLine(exception.StackTrace.ToString());
-                    MessageBox.Show(exception.StackTrace.ToString());
-                    //MessageBox.Show("Error during select all records from database. Probably database doesn't exist");
+                   // MessageBox.Show(exception.StackTrace.ToString());
                 }
                   
             }
 
             return SetsList;
         }
+
+      
     }
 
   

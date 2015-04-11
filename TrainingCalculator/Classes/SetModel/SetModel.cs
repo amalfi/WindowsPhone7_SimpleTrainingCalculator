@@ -12,12 +12,6 @@ using System.Data.Linq.Mapping;
 
 namespace TrainingCalculator.Tools
 {
-    /*
-        public double weight { get; set; }
-        public int reps { get; set; }
-        public int setNumber { get; set; } 
-    */
-  
         [Table]
         public class SetModel
         {
