@@ -30,8 +30,7 @@ namespace TrainingCalculator.Tools
 
             int lastIdNumber = dbTools.getLastIdFromDatabase();
             int lastWorkoutIdNumber = dbTools.getLastWorkoutIdFromDatabase();
-            //--------------------------------------------------------------------
-            
+       
             using (SetModelContext setdb = new SetModelContext(strConnectionString))
             {
                 lastWorkoutIdNumber += 1;
@@ -62,7 +61,8 @@ namespace TrainingCalculator.Tools
                     catch (Exception exception)
                     {
                         Debug.WriteLine(exception.StackTrace.ToString());
-                        MessageBox.Show("Error during adding workout plan to the database. Probably database doesn't exist");
+                        //MessageBox.Show("Error during adding workout plan to the database. Probably database doesn't exist");
+                        MessageBox.Show(exception.StackTrace.ToString());
                     }
                 }
                 MessageBox.Show("Workout Plan Added Successfully!!!");
@@ -85,15 +85,14 @@ namespace TrainingCalculator.Tools
                 {
 
                     Debug.WriteLine(exception.StackTrace.ToString());
-                    MessageBox.Show("Error during select all records from database. Probably database doesn't exist");
+                    MessageBox.Show(exception.StackTrace.ToString());
+                    //MessageBox.Show("Error during select all records from database. Probably database doesn't exist");
                 }
                   
             }
 
             return SetsList;
         }
-
-        
     }
 
   

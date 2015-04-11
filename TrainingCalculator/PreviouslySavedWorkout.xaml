@@ -30,7 +30,7 @@
         <ScrollViewer HorizontalScrollBarVisibility="Auto" Canvas.Top="60" Canvas.Left="340" Margin="5,-2,6,367">
             <TextBlock TextWrapping="Wrap" Name="previouslySavedWorkoutsTextBlock" Text="" Margin="4,2,6,456" />
         </ScrollViewer>
-        <Button Content="Previous Page" Height="72" HorizontalAlignment="Left" Margin="136,592,0,0" Name="button1" VerticalAlignment="Top" Width="226" Click="button1_Click" Loaded="button1_Loaded" />
+        <Button Content="Previous Page" Height="72" HorizontalAlignment="Left" Margin="136,592,0,0" Name="button1" VerticalAlignment="Top" Width="226" Click="button1_Click" />
 
     </Grid>
  

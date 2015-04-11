@@ -28,20 +28,13 @@ namespace TrainingCalculator
             InitializeComponent();
         }
 
-        private void previouslySavedTextAreaHandler(object sender, RoutedEventArgs e)
-        {
-           
-        }
-
+  
         private void button1_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
         }
 
-        private void button1_Loaded(object sender, RoutedEventArgs e)
-        {
 
-        }
 
         private void LayoutRoot_Loaded(object sender, RoutedEventArgs e)
         {

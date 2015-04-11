@@ -121,15 +121,7 @@ namespace TrainingCalculator
                 NavigationService.Navigate(new Uri("/SecondPage.xaml", UriKind.Relative));
             }
         }
-        private void button3_Click(object sender, RoutedEventArgs e)
-        {
 
-        }
-
-        private void button2_Click(object sender, RoutedEventArgs e) //DbTest button
-        {
-         
-        }
 
         private void button2_Click_1(object sender, RoutedEventArgs e)
         {
