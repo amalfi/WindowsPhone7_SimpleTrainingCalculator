@@ -26,7 +26,7 @@ namespace TrainingCalculator.Classes.TemporarySet
 
             List<int> listOfSetsIds = new List<int>();
             int lastIdNumber = 0;
-            //--------------------------------------------------------------------
+
             IList<SetModel> SetsList = null;
             using (SetModelContext Empdb = new SetModelContext(strConnectionString))
             {
@@ -52,7 +52,7 @@ namespace TrainingCalculator.Classes.TemporarySet
             Array.Sort(sortedIds);
             if (sortedIds.Length != 0)
             {
-                lastIdNumber = sortedIds[0];
+                lastIdNumber = sortedIds[sortedIds.Length-1];
             }
 
 
@@ -82,7 +82,7 @@ namespace TrainingCalculator.Classes.TemporarySet
             Array.Sort(sortedIds);
             if (sortedIds.Length != 0)
             {
-                lastIdNumber = sortedIds[0];
+                lastIdNumber = sortedIds[sortedIds.Length - 1];
             }
             return lastIdNumber;
         }

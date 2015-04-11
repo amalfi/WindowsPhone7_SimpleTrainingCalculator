@@ -45,7 +45,7 @@ namespace TrainingCalculator.Tools
                     SetModel set = new SetModel
                     {
                         WorkoutID = lastWorkoutIdNumber.ToString(),
-                        SetID = lastIdNumber.ToString(),
+                        SetID =  (lastWorkoutIdNumber + lastIdNumber).ToString(),
                         Reps = currentReps.ToString(),
                         Weight = currentWeight.ToString(),
                         SetNumber = numberOfSet.ToString(),

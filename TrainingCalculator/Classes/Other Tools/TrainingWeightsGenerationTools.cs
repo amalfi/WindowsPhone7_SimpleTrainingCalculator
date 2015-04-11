@@ -33,31 +33,27 @@ namespace TrainingCalculator
                 {
                     String currentKey = item.Key;
                     //-----------------------------------------------------------Excersise Names
-                    if (currentKey.Equals("squatChecked"))
+                    switch (currentKey)
                     {
-                        checkedBoxesValues.Add("excersiseName", item.Key.ToString());
+                        case "squatChecked":
+                            checkedBoxesValues.Add("excersiseName", item.Key.ToString());
+                            break;
+                        case "deadliftChecked":
+                            checkedBoxesValues.Add("excersiseName", item.Key.ToString());
+                            break;
+                        case "benchPressChecked":
+                            checkedBoxesValues.Add("excersiseName", item.Key.ToString());
+                            break;
+                        case "fiveFiveChecked":
+                            checkedBoxesValues.Add("repSchema", item.Key.ToString());
+                            break;
+                        case "sixSixChecked":
+                            checkedBoxesValues.Add("repSchema", item.Key.ToString());
+                            break;
+                        case "threeThreeChecked":
+                            checkedBoxesValues.Add("repSchema", item.Key.ToString());
+                            break;
                     }
-                    if (currentKey.Equals("deadliftChecked"))
-                    {
-                        checkedBoxesValues.Add("excersiseName", item.Key.ToString());
-                    }
-                    if (currentKey.Equals("benchPressChecked"))
-                    {
-                        checkedBoxesValues.Add("excersiseName", item.Key.ToString());
-                    }
-                    //-----------------------------------------------------------Rep schemas
-                    if (currentKey.Equals("fiveFiveChecked"))
-                    {
-                        checkedBoxesValues.Add("repSchema", item.Key.ToString());
-                    }
-                    if (currentKey.Equals("sixSixChecked"))
-                    {
-                        checkedBoxesValues.Add("repSchema", item.Key.ToString());
-                    }
-                    if (currentKey.Equals("threeThreeChecked"))
-                    {
-                        checkedBoxesValues.Add("repSchema", item.Key.ToString());
-                    }      
                 }
             }
             return checkedBoxesValues;
